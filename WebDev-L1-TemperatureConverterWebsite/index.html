@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101827">
+
+```
+<title>Thermo — Temperature Converter</title>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+>
+
+<!-- CSS Stylesheet -->
+<link rel="stylesheet" href="style.css">
+
+<!-- JavaScript -->
+<script src="script.js" defer></script>
+```
+
+</head>
+
+<body>
+    <!-- Background Effects -->
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+```
+<!-- Header -->
+<header class="topbar">
+    <a class="brand" href="#" aria-label="Thermo home">
+        <span class="brand-mark" aria-hidden="true">✳</span>
+        <span>thermo<span class="brand-period">.</span></span>
+    </a>
+
+    <div class="topbar-right">
+        <span class="status-dot"></span>
+        <span>Precision converter</span>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="page-shell">
+
+    <!-- Introduction -->
+    <section class="intro">
+        <div class="eyebrow">
+            <span class="eyebrow-line"></span>
+            TEMPERATURE, SIMPLIFIED
+        </div>
+
+        <h1>
+            Feel the
+            <span class="gradient-text">difference.</span>
+        </h1>
+
+        <p class="intro-copy">
+            A little less guesswork. Convert temperatures between
+            Celsius, Fahrenheit, and Kelvin in an instant.
+        </p>
+    </section>
+
+    <!-- Temperature Converter -->
+    <section class="converter-card" aria-labelledby="converter-title">
+
+        <div class="card-heading">
+            <div>
+                <div class="card-kicker">CONVERTER</div>
+                <h2 id="converter-title">Make a conversion</h2>
+            </div>
+
+            <div class="thermometer-icon" aria-hidden="true">♨</div>
+        </div>
+
+        <!-- Converter Form -->
+        <form id="converter-form" novalidate>
+
+            <div class="field-grid">
+
+                <!-- Temperature Input -->
+                <div class="field-group">
+                    <label for="temperature">Temperature value</label>
+
+                    <div class="input-wrap">
+                        <input
+                            id="temperature"
+                            name="temperature"
+                            type="number"
+                            inputmode="decimal"
+                            step="any"
+                            placeholder="e.g. 25"
+                            autocomplete="off"
+                            aria-describedby="input-error"
+                        >
+
+                        <span class="input-symbol">°</span>
+                    </div>
+
+                    <p class="field-hint">
+                        Enter a number to get started
+                    </p>
+                </div>
+
+                <!-- Unit Selection -->
+                <div class="field-group">
+                    <label for="input-unit">Input unit</label>
+
+                    <div class="select-wrap">
+                        <select id="input-unit" name="input-unit">
+                            <option value="C">Celsius (°C)</option>
+                            <option value="F">Fahrenheit (°F)</option>
+                            <option value="K">Kelvin (K)</option>
+                        </select>
+
+                        <span class="select-arrow" aria-hidden="true">
+                            ⌄
+                        </span>
+                    </div>
+
+                    <p class="field-hint">
+                        Choose your starting scale
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Validation Error -->
+            <div
+                class="error-message"
+                id="input-error"
+                role="alert"
+                aria-live="polite"
+            ></div>
+
+            <!-- Action Buttons -->
+            <div class="form-actions">
+                <button class="convert-button" type="submit">
+                    <span>Convert temperature</span>
+                    <span class="button-arrow" aria-hidden="true">↗</span>
+                </button>
+
+                <button
+                    class="reset-button"
+                    type="button"
+                    id="reset-button"
+                    aria-label="Reset converter"
+                >
+                    ↺ <span>Reset</span>
+                </button>
+            </div>
+
+        </form>
+
+        <!-- Conversion Results -->
+        <div class="results-heading">
+            <span class="results-label">CONVERSION RESULTS</span>
+
+            <span class="live-badge">
+                <span></span>
+                READY
+            </span>
+        </div>
+
+        <div class="results-grid" id="results" aria-live="polite">
+
+            <!-- Celsius Result -->
+            <article class="result-card featured" data-unit="C">
+                <div class="result-top">
+                    <span class="unit-icon">°C</span>
+                    <span class="result-name">Celsius</span>
+                </div>
+
+                <div class="result-value" id="result-C">
+                    —<small> °C</small>
+                </div>
+
+                <div class="result-note" id="note-C">
+                    Metric temperature scale
+                </div>
+            </article>
+
+            <!-- Fahrenheit Result -->
+            <article class="result-card" data-unit="F">
+                <div class="result-top">
+                    <span class="unit-icon">°F</span>
+                    <span class="result-name">Fahrenheit</span>
+                </div>
+
+                <div class="result-value" id="result-F">
+                    —<small> °F</small>
+                </div>
+
+                <div class="result-note" id="note-F">
+                    Common in the United States
+                </div>
+            </article>
+
+            <!-- Kelvin Result -->
+            <article class="result-card" data-unit="K">
+                <div class="result-top">
+                    <span class="unit-icon">K</span>
+                    <span class="result-name">Kelvin</span>
+                </div>
+
+                <div class="result-value" id="result-K">
+                    —<small> K</small>
+                </div>
+
+                <div class="result-note" id="note-K">
+                    Scientific absolute scale
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Results Information -->
+        <div class="result-footer">
+            <span class="info-icon">i</span>
+            <span>
+                Results are rounded to 2 decimal places.
+                Calculations use full precision.
+            </span>
+        </div>
+
+    </section>
+
+    <!-- Conversion Formulas -->
+    <section class="formula-strip" aria-label="Conversion formulas">
+
+        <div class="formula-title">
+            <span class="formula-symbol">ƒx</span>
+
+            <div>
+                <strong>Behind the numbers</strong>
+                <span>Simple formulas, accurate results.</span>
+            </div>
+        </div>
+
+        <div class="formula-item">
+            <span>°C → °F</span>
+            <code>(°C × 9/5) + 32</code>
+        </div>
+
+        <div class="formula-item">
+            <span>°F → °C</span>
+            <code>(°F − 32) × 5/9</code>
+        </div>
+
+        <div class="formula-item">
+            <span>°C → K</span>
+            <code>°C + 273.15</code>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <span>
+            © <span id="year"></span> Thermo Converter
+        </span>
+
+        <span>
+            Built for curious minds
+            <span class="footer-spark">✦</span>
+        </span>
+    </footer>
+
+</main>
+```
+
+</body>
+</html>
