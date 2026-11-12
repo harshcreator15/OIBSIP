@@ -11,6 +11,17 @@ A responsive temperature converter built with vanilla HTML, CSS, and JavaScript 
 - Responsive layout for mobile, tablet, and desktop.
 - No frameworks or build tools required.
 
+## Screenshots
+
+### Desktop Version
+<img width="1905" height="963" alt="Screenshot (1163)" src="https://github.com/user-attachments/assets/18d9d78c-c106-4024-b5df-8df0aa5c0b50" />
+<img width="1896" height="970" alt="Screenshot (1167)" src="https://github.com/user-attachments/assets/a33edffb-4f21-461f-878b-5e7459b76658" />
+
+### Mobile Version 
+<img width="444" height="859" alt="Screenshot (1165)" src="https://github.com/user-attachments/assets/661bafec-7c9d-4101-83ca-efe91a97f949" />
+<img width="444" height="864" alt="Screenshot (1166)" src="https://github.com/user-attachments/assets/f92e93ee-e6b3-4031-8ada-876c6eeb1130" />
+
+
 ## Run locally
 1. Extract the project folder.
 2. Open `index.html` in a modern browser.
